@@ -476,7 +476,6 @@ client.on('message', message => {
        if (message.content ===  "--help") {
  message.channel.send('**تم ارسال الاومر في الخاص|| Done Enter Command In Box :D**')
 message.author.sendMessage(`
-```
 ༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 :earth_africa: الاوامــر الــعـــامـــة:earth_africa: 
 1༺༻  --id  | لعرض معلومات الشخص༺༻
@@ -491,16 +490,9 @@ message.author.sendMessage(`
 4༺༻  --ban | لاعطاء باند لشخص༺༻
 Made By Mas-Mrzizx#9302
 ༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻ 
-```
 `);
        }
 });
-
-
-
-
-
-
 
 
 
