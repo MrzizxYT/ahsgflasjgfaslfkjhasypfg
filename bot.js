@@ -16,7 +16,7 @@ client.login(process.env.BOT_TOKEN);
 
 
 
-// SERVERS SCRIPTclient.on('message', message => {
+client.on('message', message => {
     if (message.content.startsWith("---avatar")) {
         var mentionned = message.mentions.users.first();
     var x5bzm;
@@ -46,7 +46,6 @@ client.on('message', message => {
 
 
 
-// AVATAR SCRIPT
 client.on('message', message => {
     if (message.content.startsWith("--avatar")) {
         var mentionned = message.mentions.users.first();
@@ -67,7 +66,7 @@ client.on('message', message => {
 
 
 
-// MEMBERS SCRIPT
+
       client.on('message',function(message) {
   if (message.author.bot) return;
 
@@ -92,7 +91,7 @@ client.on('message', message => {
 
 
 
-// ID SCRIPT
+
   client.on('message', message => {
 var args = message.content.split(" ").slice(1);    
 if(message.content.startsWith(prefix + 'id')) {
@@ -149,7 +148,7 @@ message.channel.send({embed});
 
 
 
-// SERVER SCRIPT
+
 client.on('message', function(msg) {
     if(msg.content.startsWith (prefix  + 'server')) {
       let embed = new Discord.RichEmbed()
@@ -171,7 +170,7 @@ client.on('message', function(msg) {
 
 
 
-// CUTTWEET SCRIPT
+
  const cuttweet = [
      'كت تويت ‏| تخيّل لو أنك سترسم شيء وحيد فيصبح حقيقة، ماذا سترسم؟',
      'كت تويت | أكثر شيء يُسكِت الطفل برأيك؟',
@@ -218,7 +217,7 @@ client.on('message', function(msg) {
 
 
 
-// BAN SCRIPT
+
 client.on('message', message => {
   if (message.author.x5bz) return;
   if (!message.content.startsWith(prefix)) return;
@@ -263,9 +262,9 @@ client.on('message', message => {
 
 
 
-// KICK SCRIPT
+
 client.on('message', message => {
-if (message.content.startsWith("---kick")) {
+if (message.content.startsWith("--kick")) {
     var mention = message.mentions.members.first();
     if(!mention) return message.channel.send("يجب منشن العضو");
 
@@ -275,7 +274,11 @@ if (message.content.startsWith("---kick")) {
 };
 });
 
-// ROLL SCRIPT
+
+
+
+
+
 client.on('message', function(message) {
     if(message.content.startsWith(prefix + 'roll')) {
         let args = message.content.split(" ").slice(1);
@@ -303,7 +306,7 @@ client.on('message', function(message) {
 
 
 
-// CLEAR SCRIPT
+
 client.on("message", message => {
     var prefix = "--";
  
@@ -335,7 +338,7 @@ client.on("message", message => {
 
 
 
-// BROADCAST SCRIPT
+
 client.on('message', message => {
               if(!message.channel.guild) return;
     var prefix = "--";
@@ -381,7 +384,7 @@ client.on('message', message => {
 
 
 
-// BOT SCRIPT
+
 client.on('message', message => {
 
      if (message.author.bot) return;
@@ -404,7 +407,7 @@ Channels📚 ${client.channels.size} `)
 
 
 
-// HELP SCRIPT
+
 client.on('message', message => {
      if (message.author.bot) return;
        if (message.content ===  "--help") {
