@@ -409,7 +409,7 @@ client.on('message', message => {
 
 let rebel;
 client.on("ready", async  => {
-    let guild = client.guilds.get("461965117920247818");
+    let guild = client.guilds.get("461966039811620895");
   let users = guild.members.map(member => member.user.id);
   let i;
   rebel=0;
