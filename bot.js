@@ -445,3 +445,70 @@ client.on('message', Codes => {
 }
 });
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+client.on('message', message => {
+     if (message.author.bot) return;
+       if (message.content ===  "--help") {
+ message.channel.send('**تم ارسال الاومر في الخاص|| Done Enter Command In Box :D**')
+message.author.sendMessage(`
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
+:earth_africa: الاوامــر الــعـــامـــة:earth_africa: 
+1༺༻  --id  | لعرض معلومات الشخص༺༻
+2༺༻  --server | لعرض معلومات السيرفر༺༻
+3༺༻  ping | لعرض بنق البوت༺༻
+4༺༻ --invite | لدعوة البوت الى سيرفرك༺༻
+5༺༻  --avatar | لعرض صورة الشخص༺༻
+:closed_lock_with_key: اوامـــر الادمـــنـــيــــة:closed_lock_with_key: 
+1༺༻  --clear | لمسح الشات༺༻
+2༺༻  --bc | لارسال رسالة لجميع الاعضاء༺༻
+3༺༻  --kick | لطرد العضو من السيرفر༺༻
+4༺༻  --ban | لاعطاء باند لشخص༺༻
+Made By Mas-Mrzizx#9302
+༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻ 
+   `);
+       }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
