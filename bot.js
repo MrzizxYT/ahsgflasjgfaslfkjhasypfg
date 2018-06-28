@@ -33,17 +33,114 @@ client.on('message', message => {
 
 
 
-// PING SCRIPT
-client.on("message", message => {
-      if (message.content === "ping	") {
-      const embed = new Discord.RichEmbed()
+// Servers script
+
+client.on('message', message => {
+     if (message.content === "--servers") {
+     let embed = new Discord.RichEmbed()
   .setColor("RANDOM")
-  .addField('**Ping:**' , `${Date.now() - message.createdTimestamp}` + ' ms')
+  .addField("**Servers: **" , client.guilds.size)
   message.channel.sendEmbed(embed);
     }
 });
 
 
+//avatar script
+
+client.on('message', message => {
+    if (message.content.startsWith("--avatar")) {
+        var mentionned = message.mentions.users.first();
+    var x5bzm;
+      if(mentionned){
+          var x5bzm = mentionned;
+      } else {
+          var x5bzm = message.author;
+          
+      }
+        const embed = new Discord.RichEmbed()
+        .setColor("RANDOM")
+        .setImage(`${x5bzm.avatarURL}`)
+      message.channel.sendEmbed(embed);
+    }
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+client.on('message', message => {
+     if (message.content === "---servers") {
+     let embed = new Discord.RichEmbed()
+  .setColor("RANDOM")
+  .addField("**Servers: **" , client.guilds.size)
+  message.channel.sendEmbed(embed);
+    }
+});
 
 
 
