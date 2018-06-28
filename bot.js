@@ -16,22 +16,6 @@ client.login(process.env.BOT_TOKEN);
 
 
 
-// SAY SCRIPT
-var prefix = "--";
-client.on('message', message => {
-  if (message.author.bot) return;
-  if (!message.content.startsWith(prefix)) return;
-
-  let command = message.content.split(" ")[0];
-  command = command.slice(prefix.length);
-
-  let args = message.content.split(" ").slice(1);
-
-  if (command == "say") {
-   message.channel.sendMessage(args.join("  "))
-  }
-});
-
 // SERVERS SCRIPTclient.on('message', message => {
     if (message.content.startsWith("---avatar")) {
         var mentionned = message.mentions.users.first();
@@ -275,15 +259,6 @@ client.on('message', message => {
 });
 
 
-// MS SCRIPT
-client.on("message", message => {
-      if (message.content === "ping") {
-      const embed = new Discord.RichEmbed()
-  .setColor("RANDOM")
-  .addField('**Ping:**' , `${Date.now() - message.createdTimestamp}` + ' ms')
-  message.channel.sendEmbed(embed);
-    }
-});
 
 
 
@@ -317,52 +292,11 @@ client.on('message', function(message) {
 });
 
 
-// INVITE SCRIPT
-client.on('message', message => {
-  if (true) {
-if (message.content === '--invite') {
-      message.author.send('  https://discordapp.com/api/oauth2/authorize?client_id=445936658320326656&permissions=8&scope=bot  |  تفضل رابط البوت     ').catch(e => console.log(e.stack));
-
-    }
-   } 
-  });
-
-
-client.on('message', message => {
-     if (message.content === "--invite") {
-     let embed = new Discord.RichEmbed()
-  .setAuthor(message.author.username)
-  .setColor("#9B59B6")
-  .addField(" Done | تــــم" , " |  تــــم الارســال في الخــاص")
-     
-     
-     
-  message.channel.sendEmbed(embed);
-    }
-});
 
 
 
 
 
-// CAT SCRIPT
-var cats = [
-"https://static.pexels.com/photos/104827/cat-pet-animal-domestic-104827.jpeg",
-"https://www.petfinder.com/wp-content/uploads/2012/11/101438745-cat-conjunctivitis-causes.jpg",
-"http://www.i-love-cats.com/images/2015/04/12/cat-wallpaper-38.jpg",
-"https://www.aspca.org/sites/default/files/cat-care_urine-marking_main-image.jpg",
-"https://vignette1.wikia.nocookie.net/houseofnight/images/8/8b/Cats.jpg/revision/latest?cb=20130812053537",
-"https://s-media-cache-ak0.pinimg.com/originals/f0/3b/76/f03b7614dfadbbe4c2e8f88b69d12e04.jpg",
-"http://www.rd.com/wp-content/uploads/sites/2/2016/04/15-cat-wants-to-tell-you-attention.jpg"
-]
-    client.on('message', message => {
-        var args = message.content.split(" ").slice(1);
-    if(message.content.startsWith(prefix + 'cat')) {
-         var cat = new Discord.RichEmbed()
-.setImage(cats[Math.floor(Math.random() * cats.length)])
-message.channel.sendEmbed(cat);
-    }
-});
 
 
 
