@@ -483,9 +483,8 @@ message.author.sendMessage(`
 3༺༻  ping | لعرض بنق البوت༺༻
 4༺༻ --invite | لدعوة البوت الى سيرفرك༺༻
 5༺༻  --avatar | لعرض صورة الشخص༺༻
-6༺༻  --dog  | لعرض صور كلاب༺༻
-7༺༻  --cat  | لعرض صور قطط༺༻
-8༺༻  --rp  | لعرض صور ارانب༺༻
+6༺༻  --cat  | لعرض صور قطط༺༻
+7༺༻  --rp  | لعرض صور ارانب༺༻
 :closed_lock_with_key: اوامـــر الادمـــنـــيــــة:closed_lock_with_key: 
 1༺༻  --clear | لمسح الشات༺༻
 2༺༻  --bc | لارسال رسالة لجميع الاعضاء༺༻
@@ -647,26 +646,6 @@ client.on('message' , async (message) => {
 };
 
 });
-
-
-const superagent = require('superagent')
-client.on('message' , async (message) => {
-    if (message.content.startsWith(prefix + 'dog')) {
-
-    
-    const { body } = await superagent
-    .get('https://dog.ceo/api/breeds/image/random');
-    const embed = new Discord.RichEmbed()
-    .setColor(0x954D23)
-    .setTitle("Woof :dog2:")
-    .setImage(body.message)
-    message.channel.send({embed})
-    
-
-
-}
-})
-
 
 
 
