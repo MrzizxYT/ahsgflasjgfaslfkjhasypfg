@@ -772,7 +772,6 @@ client.on('messageDelete', message => {
 
 });
 
-client.login("توكن بوتك هنا")
 
 
 
