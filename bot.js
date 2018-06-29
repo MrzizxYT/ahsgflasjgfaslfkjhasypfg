@@ -474,7 +474,7 @@ client.on('message', Codes => {
 client.on('message', message => {
      if (message.author.bot) return;
        if (message.content ===  "--help") {
- message.channel.send('**تم ارسال الاومر في الخاص|| Done Enter Command In Box :D**')
+ message.channel.send('**تم ارسال الاومر في الخاص|| Commands have been send in the Dms**')
 message.author.sendMessage(`
 ༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
 :earth_africa: الاوامــر الــعـــامـــة:earth_africa: 
