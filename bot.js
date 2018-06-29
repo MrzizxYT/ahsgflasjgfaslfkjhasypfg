@@ -546,7 +546,7 @@ let norelden = new Discord.RichEmbed()
 .setTimestamp(new Date())
 .setThumbnail(client.user.avatarURL)
 .addField("UpTime :",`**[** **Days:** \`${days}\` **Hours:** \`${hours}\` **Minutes:** \`${minutes}\` **Seconds:** \`${seconds}\` **]**`,true)
-.setFooter("  S Bot |");
+.setFooter(" SyntaxBot |");
   message.channel.send({embed:v1}).then(m => m.edit({embed:norelden}),5000);
 }
 });
