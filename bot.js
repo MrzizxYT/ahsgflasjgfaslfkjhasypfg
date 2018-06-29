@@ -559,7 +559,8 @@ let norelden = new Discord.RichEmbed()
 
 
   var prefix = "--";
-var rebel = ["https://media.giphy.com/media/pjk3wZcciRENa/giphy.gif",
+var rebel = [
+             "https://media.giphy.com/media/pjk3wZcciRENa/giphy.gif",
              "http://78.media.tumblr.com/fd4383e21495f2bb10ed699cd73f22ca/tumblr_n5l0pk3w4E1so8ds0o1_500.gif",
              "https://media1.giphy.com/media/14309XrKEC7yyk/giphy.gif",
              "http://gifimage.net/wp-content/uploads/2017/06/anime-gif-13-1.gif",
