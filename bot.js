@@ -471,30 +471,28 @@ client.on('message', Codes => {
 
 
 
+
 client.on('message', message => {
-     if (message.author.bot) return;
-       if (message.content ===  "--help") {
- message.channel.send('**تم ارسال الاومر في الخاص|| Done Enter Command In Box :D**')
-message.author.sendMessage(`
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
-:earth_africa: الاوامــر الــعـــامـــة:earth_africa: 
-1༺༻  --id  | لعرض معلومات الشخص༺༻
-2༺༻  --server | لعرض معلومات السيرفر༺༻
-3༺༻  ping | لعرض بنق البوت༺༻
-4༺༻ --invite | لدعوة البوت الى سيرفرك༺༻
-5༺༻  --avatar | لعرض صورة الشخص༺༻
-6༺༻  --cat  | لعرض صور قطط༺༻
-7༺༻  --rp  | لعرض صور ارانب༺༻
-:closed_lock_with_key: اوامـــر الادمـــنـــيــــة:closed_lock_with_key: 
-1༺༻  --clear | لمسح الشات༺༻
-2༺༻  --bc | لارسال رسالة لجميع الاعضاء༺༻
-3༺༻  --kick | لطرد العضو من السيرفر༺༻
-4༺༻  --ban | لاعطاء باند لشخص༺༻
-5༺༻  --moveall | لسحب كل الناس الى رومك༺༻
-Made By Mas-Mrzizx#9302
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻ 
-`);
-       }
+            if (message.content.startsWith(prefix + "help")) {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **--server | لعرض معلومات السيرفر** ')
+.addField('     **ping | لعرض بنق البوت** ')
+.addField('     **--invite | لدعوة البوت الى سيرفرك༺༻**') 
+.addField('     **--avatar | لعرض صورة الشخص**') 
+.addField('     **--cat  | لعرض صور قطط**')
+.addField('     **--rp  | لعرض صور ارانب**')
+.addField('     **say ** ' ,' **  عشان يتكلم عنك  ** ')
+.addField('     **:closed_lock_with_key: اوامـــر الادمـــنـــيــــة:closed_lock_with_key: ** ')
+.addField('     **--clear | لمسح الشات** ')
+.addField('     **--bc | لارسال رسالة لجميع الاعضاء** ')
+.addField('     **--kick | لطرد العضو من السيرفر** ')
+.addField('     **--ban | لاعطاء باند لشخص** ')
+.addField('     **--moveall | لسحب كل الناس الى رومك** ')
+.addField('     **clear ** ' ,' **  لمسح الشات بدون رقم  ** ')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
 });
 
 
