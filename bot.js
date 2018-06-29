@@ -483,6 +483,10 @@ message.author.sendMessage(`
 3༺༻  ping | لعرض بنق البوت༺༻
 4༺༻ --invite | لدعوة البوت الى سيرفرك༺༻
 5༺༻  --avatar | لعرض صورة الشخص༺༻
+6༺༻  --dog  | لعرض صور كلاب༺༻
+7༺༻  --anime  | لعرض صور انمى༺༻
+8༺༻  --cat  | لعرض صور قطط༺༻
+9༺༻  --rp  | لعرض صور ارانب༺༻
 :closed_lock_with_key: اوامـــر الادمـــنـــيــــة:closed_lock_with_key: 
 1༺༻  --clear | لمسح الشات༺༻
 2༺༻  --bc | لارسال رسالة لجميع الاعضاء༺༻
@@ -540,7 +544,7 @@ let v1 = new Discord.RichEmbed()
   v1.setTimestamp(new Date())
   v1.setColor("RED")
   v1.setDescription('***__ Collecting Data __***')
-  v1.setFooter("# | S Bot  |") 
+  v1.setFooter("# | SyntaxBot  |") 
 let norelden = new Discord.RichEmbed()
 .setColor('#9b59b6')
 .setTimestamp(new Date())
@@ -550,6 +554,145 @@ let norelden = new Discord.RichEmbed()
   message.channel.send({embed:v1}).then(m => m.edit({embed:norelden}),5000);
 }
 });
+
+
+
+
+  var prefix = "--";
+var rebel = ["https://media.giphy.com/media/pjk3wZcciRENa/giphy.gif","http://78.media.tumblr.com/fd4383e21495f2bb10ed699cd73f22ca/tumblr_n5l0pk3w4E1so8ds0o1_500.gif","https://media1.giphy.com/media/14309XrKEC7yyk/giphy.gif","http://gifimage.net/wp-content/uploads/2017/06/anime-gif-13-1.gif","https://i.imgur.com/M3BG3Ck.gif","https://4.bp.blogspot.com/-yDd1fLFMKts/WeX_LrmWhwI/AAAAAAAALsU/mLO7KCD0DFMp8n8xbdMdJNR5V2D0D9WXwCLcBGAs/s1600/tenor.gif","https://secure.static.tumblr.com/940bbaba171f6b2f2dabd11c17fd3f20/kj1pjcr/jxWok11nj/tumblr_static_filename_640_v2.gif","https://data.whicdn.com/images/110768190/original.gif","http://78.media.tumblr.com/80f12fdc314760b2ba3e10204e33323d/tumblr_nc1n9weNg11tk3dxfo1_500.gif","https://78.media.tumblr.com/ec3f0546a20a75cd47c00e95ef0ba0a7/tumblr_o3oyhk49JC1u6348eo1_500.gif","https://thumbs.gfycat.com/MassiveUnlinedDarwinsfox-max-1mb.gif","https://data.whicdn.com/images/120798528/original.gif","https://i.gifer.com/NZcE.gif","https://media.giphy.com/media/2aH3YUqjx92cE/giphy.gif","https://78.media.tumblr.com/99fcbe4544d83d27babb216a3f3bb8a3/tumblr_n1shx2AC2e1qztgoio3_500.gif","https://data.whicdn.com/images/81429641/original.gif","https://78.media.tumblr.com/6eace49891b549d558f3d1a2c0ad3c98/tumblr_n4xmoqCrPj1spu161o8_500.gif","https://pa1.narvii.com/6088/b868bd47eb802373aa8b8203f76b07dd04846d1f_hq.gif","https://cdn.discordapp.com/attachments/458384513173684224/460742842503921669/Tumblr_mdi9s0YkbA1rao0vlo1_500.gif","https://cdn.discordapp.com/attachments/458384513173684224/460742882064728065/Chuunibyou-Demo-Koi-Ga-Shitai-6.gif"]
+    client.on('message', message => {
+        var args = message.content.split(" ").slice(1);
+    if(message.content.startsWith(prefix + 'anime')) {
+         var cat = new Discord.RichEmbed()
+.setImage(rebel[Math.floor(Math.random() * rebel.length)])
+message.channel.sendEmbed(cat);
+    }
+});
+});
+
+
+
+client.on('message', message => {
+if(message.content.startsWith(prefix + 'moveall')) {
+ if (!message.member.hasPermission("MOVE_MEMBERS")) return message.channel.send('**لايوجد لديك صلاحية سحب الأعضاء**');
+   if(!message.guild.member(client.user).hasPermission("MOVE_MEMBERS")) return message.reply("**لايوجد لدي صلاحية السحب**");
+if (message.member.voiceChannel == null) return message.channel.send(`**الرجاء الدخول لروم صوتي**`)
+ var author = message.member.voiceChannelID;
+ var m = message.guild.members.filter(m=>m.voiceChannel)
+ message.guild.members.filter(m=>m.voiceChannel).forEach(m => {
+ m.setVoiceChannel(author)
+ })
+ message.channel.send(`**تم سحب جميع الأعضاء إليك**`)
+
+
+ }
+   });
+
+
+client.on('message',  (message) => {
+        if(message.content.startsWith('--hit')) {
+  let user = message.mentions.users.first();
+  if (!user) {
+    /**
+     * The command was ran with invalid parameters.
+     * @fires commandUsage
+     */
+    return message.emit('commandUsage', message, this.help);
+  }
+
+  let punches = [
+    'https://i.giphy.com/media/iWEIxgPiAq58c/giphy.gif',
+    'https://i.giphy.com/media/DViGV8rfVjw6Q/giphy.gif',
+    'https://i.giphy.com/media/GoN89WuFFqb2U/giphy.gif',
+    'https://i.giphy.com/media/xT0BKiwgIPGShJNi0g/giphy.gif',
+    'https://i.giphy.com/media/Lx8lyPHGfdNjq/giphy.gif'
+  ];
+
+  message.channel.send({
+    embed: {
+      description: `${message.author.username} عطاك كففف ${user.username}! 👊`,
+      image: {
+        url: punches[Math.floor(Math.random() * punches.length)]
+      }
+    }
+  }).catch(e => {
+    client.log.error(e);
+  })
+        }  
+});
+
+
+
+const request = require("request");
+client.on('message' , async (message) => {
+       if(message.content.startsWith(prefix + "rp")) {
+  let imgs = Math.floor(Math.random() * 80);
+  let url = ['https://www.reddit.com/r/Rabbits/.json?sort=rising&t=hour&limit=100'];
+  request({
+    method: 'GET',
+    uri: url[Math.floor(Math.random() * url.length)]
+  }, function (err, response, data) {
+    if(err) {
+      console.log(err, null);
+      return;
+    }
+
+  data = JSON.parse(data);
+  var mainObj = data.data.children;
+  var urls = {};
+
+  for(let i = 0; i < mainObj.length; i++) {
+  let url = mainObj[i].data.url;
+  urls[i+1] = url;
+    }
+  const embed = new Discord.RichEmbed()
+  .setTitle("Jump!")
+  .setColor(0xC93457)
+  .setImage(urls[imgs])
+  message.channel.send({embed});
+
+  if(client.user && message.content === "undefined") {
+      message.delete()
+  }})
+};
+
+});
+
+
+const superagent = require('superagent')
+client.on('message' , async (message) => {
+    if (message.content.startsWith(prefix + 'dog')) {
+
+    
+    const { body } = await superagent
+    .get('https://dog.ceo/api/breeds/image/random');
+    const embed = new Discord.RichEmbed()
+    .setColor(0x954D23)
+    .setTitle("Woof :dog2:")
+    .setImage(body.message)
+    message.channel.send({embed})
+    
+
+
+}
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
