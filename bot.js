@@ -472,32 +472,29 @@ client.on('message', Codes => {
 
 
 client.on('message', message => {
-     if (message.author.bot) return;
-       if (message.content ===  "--help") {
- message.channel.send('**تم ارسال الاومر في الخاص|| Commands have been send in the Dms**')
-message.author.sendMessage(`
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻
-:earth_africa: الاوامــر الــعـــامـــة:earth_africa: 
-1༺༻  --id  | لعرض معلومات الشخص༺༻
-2༺༻  --server | لعرض معلومات السيرفر༺༻
-3༺༻  ping | لعرض بنق البوت༺༻
-4༺༻ --invite | لدعوة البوت الى سيرفرك༺༻
-5༺༻  --avatar | لعرض صورة الشخص༺༻
-6༺༻  --cat  | لعرض صور قطط༺༻
-7༺༻  --rp  | لعرض صور ارانب༺༻
-8༺༻  --bot  | لعرض معلومات البوت༺༻
-:closed_lock_with_key: اوامـــر الادمـــنـــيــــة:closed_lock_with_key: 
-1༺༻  --clear | لمسح الشات༺༻
-2༺༻  --bc | لارسال رسالة لجميع الاعضاء༺༻
-3༺༻  --kick | لطرد العضو من السيرفر༺༻
-4༺༻  --ban | لاعطاء باند لشخص༺༻
-5༺༻  --moveall | لسحب كل الناس الى رومك༺༻
-6༺༻  --mute | لعمل ميوت كتابى༺༻
-7༺༻  --unmute | ل ازاله الميوت الكتابى༺༻
-Made By Mas-Mrzizx#9302
-༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻༺▇༻ 
-`);
-       }
+     if (message.content === "--help") {
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **ping** ' ,' **سرعة إتصال البوت** ')
+.addField('     **--id**  ' ,' **معلومــات عــن حســابــك** ')
+.addField('     **--server** ' ,' ** معلومات عن السيرفر**')
+.addField('     **--avatar** ' , '**صورتك في الدسكورد أو صورة الشخص المذكور**')
+.addField('     **--invite** ' , '**لعمل انفايت للبوت**')
+.addField('     **--bot** ' , '**لمعرفه معلومات عن البوت**')
+.addField('     **--cat** ' , '**ل اظهار صور قطط**')
+.addField('     **--rp** ' , '**ل اظهار صور ارانب**')
+.addField('     ** ** ' ,' ** أوآمر الإدآرة ** ')
+.addField('     **--kick ** ' ,' ** للطرد  ** ')
+.addField('     **--ban** ' , '**لـ اعطاء بان للعضو** ')
+.addField('     **--bc ** ' ,' ** للبرودكاست ** ')
+.addField('     **--clear** ' , '**لـ مسح الشات** ')
+.addField('     **--mute** ' , '**لمنع العضو من الكتابه لازم يكون فى رتبه muted**')
+.addField('     **--unmute** ' , '**لجعل العضو قادر على الكتابه**')
+.addField('للأستفسار أو الرد على أسئلتكم وأفكـــاركم كلمني على الديسكورد ' , '**! ҜṦẰ - KBOOSH - كبوش—Ƴ丅 0.3K#3128**')
+.addField('**لدعوة البوت للسيرفر ..**' , '**https://discordapp.com/oauth2/authorize?client_id=345157648531849216&scope=bot&permissions=0**')
+.setColor('RANDOM')
+  message.channel.sendEmbed(embed);
+    }
 });
 
 
