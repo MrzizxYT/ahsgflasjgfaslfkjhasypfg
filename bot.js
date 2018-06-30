@@ -485,6 +485,7 @@ message.author.sendMessage(`
 5༺༻  --avatar | لعرض صورة الشخص༺༻
 6༺༻  --cat  | لعرض صور قطط༺༻
 7༺༻  --rp  | لعرض صور ارانب༺༻
+8༺༻  --bot  | لعرض معلومات البوت༺༻
 :closed_lock_with_key: اوامـــر الادمـــنـــيــــة:closed_lock_with_key: 
 1༺༻  --clear | لمسح الشات༺༻
 2༺༻  --bc | لارسال رسالة لجميع الاعضاء༺༻
@@ -652,69 +653,22 @@ client.on('message' , async (message) => {
 
 
 
-
 client.on('message', message => {
+
      if (message.author.bot) return;
-       if (message.content ===  "logan paul song") {
-           message.channel.send('**Alright Check ur dm bud :D**')
-           
+    if (!message.channel.guild) return;
  
- message.author.sendMessage(`
+    
+
+if(message.content.startsWith(prefix + 'bot')) {
+        const embed = new Discord.RichEmbed()
+            .setColor("RANDOM")
+            .setDescription(`Servers🌐 ${client.guilds.size}
+Users👥 ${client.users.size}
+Channels📚 ${client.channels.size} `)
+        message.channel.sendEmbed(embed);
+    }
  
- 
-});
-Girl what you trying to do
-'cause I don't got a clue
-No I ain't no scooby doo
-(Help me help you)
-'cause I'm hungrier than you
-I just wanna get some food
-and you about to kill my mood
-(Help me help you)
-"Do these jeans make me look fat?"
-Yeah I know you want the answer
-but I'm smart and that's a trap
-(Help me help you)
-Oh, and here's a random fact
-You still got my favorite hoodie
-and you need to give it back
-It ain't that I ain't calling back
-It's just you said you needed space
-And so I'm staying out your way
-It ain't that i ain't got your back
-but you went out of your way
-to make that "k" a lowercaseWhen you ask me my opinion
-I'm always sure to be your minion
-Girl you're kinda like long divisionEverything is difficultHelp me help you
-Girl what you trying to do
-'cause i don't got a clue
-No i ain't no scooby doo
-Help me help you
-'cause I'm hungrier than you
-I just wanna get some food
-and you about to kill my mood
-"Do these jeans make me look fat?"
-Yeah I know you want the answer
-but I'm smart and that's a trap
-(Help me help you)
-Oh, and here's a random fact
-You still got my favorite hoodie
-and you need to give it back
-(woah uooohhhoohh)
-Baby girl when I ask you if there's a problem
-Don't tell me you're fine
-I know you're not fine
-I just don't understand you
-you steal the covers and then you want me to cuddle you
-are you hot or are you cold?
-Don't ask me if I think another girl is cute
-that's loaded question
-What are you trying to do? What are you trying to make me girl?
-We're on the same team
-so just please, please just listen to me and hear what I have to say Baby girl
-Help me help you');
-  `);
-}
 });
 
 
