@@ -388,7 +388,7 @@ client.on('message', message => {
        .addField('Server', message.guild.name)
        .addField('Sender', message.author.username)
        .addField('Message', args)
-       .setImage("https://cdn.discordapp.com/attachments/446020543963987977/460917978045743135/Untitled.png")
+       .setImage("https://cdn.discordapp.com/attachments/462788140134957057/462995755586682891/raser4xd.png")
     m.send({ embed: bc })
     msg.delete();
     })
