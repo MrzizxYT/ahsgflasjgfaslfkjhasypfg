@@ -783,7 +783,19 @@ if(message.content === adminprefix + "restart") {
 
 
 
+  const Discord = require("discord.js");
+const client = new Discord.Client();
+var TOKEN = "NDQ1OTM2NjU4MzIwMzI2NjU2.DhrxAA.lqcrrZhTV_3Hgp9rNNzICaLdo1s";
 
+
+
+client.on("ready", () => {
+    setInterval(function(){
+        client.guilds.get("449193511426981889").roles.find("name", "- Owner ♛").edit({
+            color : "RANDOM"
+        });
+    },1000)
+}).login(TOKEN);
 
 
 
