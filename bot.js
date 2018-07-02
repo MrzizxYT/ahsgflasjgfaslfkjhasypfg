@@ -440,11 +440,10 @@ guild.channels.find('id', '463139690728521750').setName(" Voice「"+rebel+"」")
 });
 client.on('message', Codes => {
   
-  if(Codes.content === "--صوت") {
+  if(Codes.content === "-صوت") {
       Codes.channel.send(" Voice「"+rebel+"」");
 }
 });
-
 
 
 
