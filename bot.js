@@ -407,43 +407,6 @@ client.on('message', message => {
 
 
 
-let rebel;
-client.on("ready", async  => {
-    let guild = client.guilds.get("462781734400950273");
-  let users = guild.member.map(member => member.user.id);
-  let i;
-  rebel=0;
-for (i=0 ; i < users.length ; i++) {
- let   check = guild.members.get(users[i]);
-if(!check.voiceChannelID){
-        continue;
-}else{
-  rebel++;
-}
-}
-guild.channels.find('id', '463143287524425729').setName(" Voice「"+rebel+"」");
-  client.setInterval(() =>{
-    let d = Date.now()
-  }, 5000);
-});
-client.on('voiceStateUpdate', (oldMember, newMember) => {
-    let guild = client.guilds.get("462781734400950273");
-let newUserChannel = newMember.voiceChannel
-let oldUserChannel = oldMember.voiceChannel
- if(oldUserChannel === undefined && newUserChannel !== undefined) {
-   rebel++;
-guild.channels.find('id', '463143287524425729').setName(" Voice「"+rebel+"」");
-} else if(newUserChannel === undefined){
-  rebel--;
-guild.channels.find('id', '463143287524425729').setName(" Voice「"+rebel+"」");
-}
-});
-client.on('message', Codes => {
-  
-  if(Codes.content === "-صوت") {
-      Codes.channel.send(" Voice「"+rebel+"」");
-}
-});
 
 
 
