@@ -4,7 +4,7 @@ const client = new Discord.Client();
 client.on('ready', () => {
     console.log('I am ready!');
 });
-bot.use.setActivity("Mined 3 diamonds --help", {type: "WATCHING" })
+bot.user.setActivity("Mined 3 diamonds --help", {type: "WATCHING" })
 
 client.on('message', message => {
     if (message.content === 'ping') {
