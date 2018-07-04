@@ -3,7 +3,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log('I am ready!');
-    client.user.setActivity("MineDiamonds --help", {type: "LISTENING"})
+    bot.user.setActivity("MineDiamonds --help", {type: "LISTENING"})
 });
 
 client.on('message', message => {
