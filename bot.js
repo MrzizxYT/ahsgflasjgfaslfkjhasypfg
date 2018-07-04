@@ -305,29 +305,7 @@ client.on('message', message => {
 
 
 
-// streaming
 
-client.on("ready", () => {
-console.log('By : Kyle');
-console.log('Osama Tech');
-client.user.setPresence({
-  status: 'dnd',
-  game: {
-     type: 0,
-     name: '--help | Mrzizx',
-     details: `للهم أختم بالصالحات أعمالنا`,
-     url: 'http://twitch.tv/M7md_Salih',
-     state: `في ڪڸ سن? هنآڪ شهر يجعڸني أإڪثر قرباً من ربي {شهر رمضآن}`,
-    application_id: '394600839496466443',
-     assets: {
-        small_image: `444859352093032449`,
-        small_text: '2018',
-        large_image: `444864778465181706`,
-        large_text: `Ramadan Mubarak` }
-
-  }
-    });
-});
 
 
 
@@ -718,7 +696,10 @@ client.on("message", message => {
 
 
 
-
+client.on('ready', async () => {
+    console.log(`${client.user.username} has logged in.`);
+    client.user.setActivity('Mine Diamonds --help', {type: 'WATCHING'});
+});
 
 
 
