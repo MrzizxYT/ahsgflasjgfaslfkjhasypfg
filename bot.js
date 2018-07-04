@@ -3,6 +3,7 @@ const client = new Discord.Client();
 
 client.on('ready', () => {
     console.log('I am ready!');
+    client.user.setActivity("MineDiamonds --help", {type: "LISTENING"})
 });
 
 client.on('message', message => {
@@ -694,12 +695,6 @@ client.on("message", message => {
 
 
 
-
-
-client.on('ready', async () => {
-    console.log(`${client.user.username} has logged in.`);
-    client.user.setActivity('Mine Diamonds --help', {type: 'WATCHING'});
-});
 
 
 
