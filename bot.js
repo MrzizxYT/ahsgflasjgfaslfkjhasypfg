@@ -921,3 +921,30 @@ cc.on("collect", r => {
 
 
 
+
+
+
+
+
+client.on('message', msg => {
+  if(msg.content === 'القوانين')
+  msg.reply(':loudspeaker: القوانين :muscle:  :loudspeaker: 
+1- عدم ازعاج الاداره بمواضيع فارغه
+2- عدم السبام :zipper_mouth: 
+3-احترام الجميع:slight_smile: :warning: 
+4-عدم التدخل فى امور الدين:warning: :warning: :warning: :loudspeaker: 
+5-احترام الرومات:diamond_shape_with_a_dot_inside: 
+6-تشغيل بوتات الميوزك فى روم الميوزك:100: 
+7- اوامر البوتات فى #bot :thinking: 
+@everyone @here')
+});
+
+
+
+
+
+
+
+
+
+
