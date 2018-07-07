@@ -8485,7 +8485,7 @@ ${prefix}queue ⇏ لمعرفة قآئمة التشغيل
    message.channel.sendEmbed(embed)//by ,$ ReBeL ء , 🔕#4777 'CODES SERVER'
     
    }
-   }); 
+   }}; 
    
 
 
