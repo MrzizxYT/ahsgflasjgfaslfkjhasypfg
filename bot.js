@@ -314,7 +314,6 @@ client.on('message', message => {
      if (message.content === "--help") {
      let embed = new Discord.RichEmbed()
 .setThumbnail(message.author.avatarURL)
-.addField('     **ping** ' ,' **سرعة إتصال البوت** ')
 .addField('     **--id**  ' ,' **معلومــات عــن حســابــك** ')
 .addField('     **--server** ' ,' ** معلومات عن السيرفر**')
 .addField('     **--avatar** ' , '**صورتك في الدسكورد أو صورة الشخص المذكور**')
@@ -323,7 +322,6 @@ client.on('message', message => {
 .addField('     **--hit** ' , '**لضرب شخص**')
 .addField('     **--rp** ' , '**ل اظهار صور ارانب**')
 .addField('     **--mcskin** ' , '**ل اظهار سكنك فى ماين كرافت**')
-.addField('     ** ** ' ,' ** أوآمر الالعاب ** ')
 .addField('     **--صراحه** ' , '**ل اظهار تحديات صراحه**')
 .addField('     **--عقاب** ' , '**ل اظهار عقابات**')
 .addField('     **--كت تويت** ' , '**ل اظهار كت تويت**')
@@ -332,7 +330,6 @@ client.on('message', message => {
 .addField('     **--مريم** ' , '**لكى تلعب لعبه مريم**')
 .addField('     **--قرعه** ' , '**ل عمل قرعه**')
 .addField('     **--حكم** ' , '**ل اظهار حكم**')
-.addField('     ** ** ' ,' ** أوآمر الإدآرة ** ')
 .addField('     **--kick ** ' ,' ** للطرد  ** ')
 .addField('     **--ban** ' , '**لـ اعطاء بان للعضو** ')
 .addField('     **--bc ** ' ,' ** للبرودكاست ** ')
