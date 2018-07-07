@@ -873,133 +873,6 @@ message.channel.send(`**:white_check_mark: ${user.tag} banned from the server ! 
 
 
 
-
-
-client.on('message', async message => {
-  let args = message.content.split(" ");
-  if(message.content.startsWith(prefix + "mute")) {
-    if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply('**أنت لا تملك الخصائص اللازمة . يجب توفر خاصية `Manage Roles`**').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
-
-    if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply('**أنا لا املك الخصائص الكافية . يلزم خصائص `Manage Roles` للقيام بهذا الامر**').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
-
-    let mention = message.mentions.members.first();
-    if(!mention) return message.reply('**منشن عضو لأسكاته ( لأعطائة ميوت ) كتابي**').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
-
-    if(mention.highestRole.position >= message.guild.member(message.author).highestRole.positon) return message.reply('**لا يمكنك اعطاء لميوت شخص رتبته اعلى منك**').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
-    if(mention.highestRole.positon >= message.guild.member(client.user).highestRole.positon) return message.reply('**لا يمكنني اعطاء ميوت لشخص رتبته اعلى مني**').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
-    if(mention.id === message.author.id) return message.reply('**لا يمكنك اعطاء ميوت  لنفسك**').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
-
-    let duration = args[2];
-    if(!duration) return message.reply('**حدد وقت زمني لفك الميوت عن الشخص**').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
-
-    if(isNaN(duration)) return message.reply('**حدد وقت زمني صحيح**').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
-
-    let reason = message.content.split(" ").slice(3).join(" ");
-    if(!reason) reason = "غير محدد";
-
-    let thisEmbed = new Discord.RichEmbed()
-    .setAuthor(mention.user.username, mention.user.avatarURL)
-    .setTitle('تم اغطائك ميوت بسيرفر')
-    .setThumbnail(mention.user.avatarURL)
-    .addField('# - السيرفر',message.guild.name,true)
-    .addField('# - تم اعطائك ميوت بواسطة',message.author,true)
-    .addField('# - السبب',reason)
-
-    let role = message.guild.roles.find('name', 'Muted') || message.guild.roles.get(r => r.name === 'Muted');
-    if(!role) try {
-      message.guild.createRole({
-        name: "Muted",
-        permissions: 0
-      }).then(r => {
-        message.guild.channels.forEach(c => {
-          c.overwritePermissions(r , {
-            SEND_MESSAGES: false,
-            READ_MESSAGES_HISTORY: false,
-            ADD_REACTIONS: false
-          });
-        });
-      });
-    } catch(e) {
-      console.log(e.stack);
-    }
-    mention.addRole(role).then(() => {
-      mention.send(thisEmbed);
-      message.channel.send(`**:white_check_mark: ${mention.user.username} muted in the server ! :zipper_mouth:  **  `);
-      mention.setMute(true);
-    });
-    setTimeout(() => {
-      if(duration === 0) return;
-      if(!mention.has.roles(role)) return;
-      mention.setMute(false);
-      mention.removeRole(role);
-      message.channel.send(`**:white_check_mark: ${mention.user.username} unmuted in the server ! :neutral_face:  **  `);
-    },duration * 60000);
-  } else if(message.content.startsWith(prefix + "unmute")) {
-    let mention = message.mentions.members.first();
-    let role = message.guild.roles.find('name', 'Muted') || message.guild.roles.get(r => r.name === 'Muted');
-    if(!message.member.hasPermission("MANAGE_ROLES")) return message.reply('**أنت لا تملك الخصائص اللازمة . يجب توفر خاصية `Manage Roles`**').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
-
-    if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.reply('**أنا لا املك الخصائص الكافية . يلزم خصائص `Manage Roles` للقيام بهذا الامر**').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
-
-    if(!mention) return message.reply('**منشن الشخص لفك الميوت عنه**').then(msg => {
-      msg.delete(3500);
-      message.delete(3500);
-    });
-
-      mention.removeRole(role);
-      mention.setMute(false);
-      message.channel.send(`**:white_check_mark: ${mention.user.username} unmuted in the server ! :neutral_face:  **  `);
-  }
-});
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 client.on('message', async message => {
   if(message.author.bot) return;
   if(message.channel.type === "dm") return;
@@ -1095,7 +968,30 @@ client.on('message', async message => {
 
 
 
-
+client.on('message',function(message) {
+    let messageArray = message.content.split(' ');
+    let muteRole = message.guild.roles.get('Muted') || message.guild.roles.find('name', 'Muted');
+    let muteMember = message.mentions.members.first();
+    let muteReason = messageArray[2];
+    let muteDuration = messageArray[3];
+   if(message.content.startsWith(prefix + "mute")) {
+       if(!muteRole) return message.guild.createRole({name: 'Muted'}).then(message.guild.channels.forEach(chan => chan.overwritePermissions(muteRole, {SEND_MESSAGES:false,ADD_REACTIONS:false})));
+       if(!message.guild.member(message.author).hasPermission("MANAGE_ROLES")) return message.channel.send('ℹ **Error:** ``خصائص مفقودة``');
+       if(!message.guild.member(client.user).hasPermission("MANAGE_ROLES")) return message.channel.send('ℹ **Error:** ``خصائص مفقودة مني``');
+       if(!muteMember) return message.channel.send('ℹ **Error:** ``منشن شخص``');
+       if(!muteReason) return message.channel.send('ℹ **Error:** ``حدد سباّ``');
+       if(!muteDuration) return message.channel.send('ℹ **Error:** ``حدد وقت زمني``');
+       if(!muteDuration.match(/[1-7][s,m,h,d,w]/g)) return message.channel.send('ℹ **Error:** ``حدد وقت زمني صحيح``');
+       message.channel.send(`:white_check_mark: **تم اعطاء العضو ميوت : ${muteMember}**`);
+       muteMember.addRole(muteRole);
+       muteMember.setMute(true)
+       .then(() => { setTimeout(() => {
+           muteMember.removeRole(muteRole)
+           muteMember.setMute(false)
+       }, mmss(muteDuration));
+       });
+   } 
+});
 
 
 
