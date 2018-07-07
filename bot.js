@@ -1028,7 +1028,7 @@ const fs = require("fs");// npm i fs
                               ctx.fontSize = '28px';
                               ctx.fillStyle = "#FFFFFF";
                               ctx.textAlign = "center";
-                                    ctx.fillText(`you are number ${member.guild.memberCount} `
+                                    ctx.fillText(`You Are Number ${member.guild.memberCount} `
                               , 200, 190);
 
  welcomer.sendFile(canvas.toBuffer())
