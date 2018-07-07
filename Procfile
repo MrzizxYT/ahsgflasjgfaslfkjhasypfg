@@ -1,1 +1,1 @@
-worker: node bot.js
+worker: sudo add-apt-repository ppa:mc3man/trusty-media
