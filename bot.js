@@ -322,6 +322,7 @@ client.on('message', message => {
 .addField('     **--bot** ' , '**لمعرفه معلومات عن البوت**')
 .addField('     **--hit** ' , '**لضرب شخص**')
 .addField('     **--rp** ' , '**ل اظهار صور ارانب**')
+.addField('     **--mcskin** ' , '**ل اظهار سكنك فى ماين كرافت**')
 .addField('     ** ** ' ,' ** أوآمر الالعاب ** ')
 .addField('     **--صراحه** ' , '**ل اظهار تحديات صراحه**')
 .addField('     **--عقاب** ' , '**ل اظهار عقابات**')
@@ -336,6 +337,8 @@ client.on('message', message => {
 .addField('     **--ban** ' , '**لـ اعطاء بان للعضو** ')
 .addField('     **--bc ** ' ,' ** للبرودكاست ** ')
 .addField('     **--clear** ' , '**لـ مسح الشات** ')
+.addField('     **--mute** ' , '**ل اعطاء العضو ميوت**')
+.addField('     **--unmute** ' , '**ل قك الميوت من العضو**')
 .addField('للأستفسار أو الرد على أسئلتكم وأفكـــاركم كلمني على الديسكورد ' , '**Mas-Mrzizx#9302**')
 .addField('**لدعوة البوت للسيرفر ..**' , '**https://discordapp.com/api/oauth2/authorize?client_id=445936658320326656&permissions=8&scope=bot**')
 .setColor('RANDOM')
@@ -8335,6 +8338,42 @@ client.on("message", message => {
 };
  
 });
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+client.on("message", message => {
+    if (!message.content.startsWith(prefix)) return;
+      let command = message.content.split(" ")[0];
+      command = command.slice(prefix.length);
+        if(command === "mcskin") {
+                const args = message.content.split(" ").slice(1).join(" ")
+        if (!args) return message.channel.send("** Type your skin name **");
+        const image = new Discord.Attachment(`https://minotar.net/armor/body/${args}`, "skin.png");
+    message.channel.send(image)
+        }
+    });
+
 
 
 
