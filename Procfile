@@ -1,1 +1,1 @@
-worker: sudo add-apt-repository ppa:mc3man/trusty-media
+worker: sudo apt-get update
