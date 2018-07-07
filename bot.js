@@ -854,7 +854,7 @@ message.channel.send(`**:white_check_mark: ${user.tag} banned from the server ! 
 
 
   client.on('ready', function(){
-    var ms = 800 ;
+    var ms = 1000 ;
     var setGame = [`--h `,` --he`,`--hel`,`--help`];
     var i = -1;
     var j = 0;
