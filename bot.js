@@ -972,7 +972,7 @@ var Canvas = require('canvas');// npm i canvas
 var jimp = require('jimp');// npm i jimp 
 const fs = require("fs");// npm i fs
 
-      bot.on('guildMemberAdd', member => {
+      client.on('guildMemberAdd', member => {
       const welcomer =  member.guild.channels.find('name', 'member-log');//اسم الروم الي يرحب فيه
 
       var Canvas = require('canvas')
