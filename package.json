@@ -41,6 +41,7 @@
     "fortnite": "^4.1.1",
     "get-youtube-id": "^1.0.0",
     "youtube-info":"^1.2.0",
+    "ffmpeg":"^0.0.4",
     "gm": "^1.23.1"
   },
   "engines": {
