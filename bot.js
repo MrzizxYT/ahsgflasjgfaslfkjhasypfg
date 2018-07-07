@@ -1221,7 +1221,7 @@ member.guild.channels.find('id', welc[member.guild.id].imgwelc).sendFile(canvas.
 
 
 const Fortnite = require('fortnite');
-const stats = new Fortnite("42114d32-c859-4168-9a8b-6cc660e71edc");
+const stats = new Fortnite("6cddbb3a-e49e-4508-b862-aaaab56e6024");
 
 exports.run = (client, message, args, tools) => {
 
