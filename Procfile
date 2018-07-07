@@ -1,1 +1,1 @@
-worker: sudo apt-get update
+worker: sudo apt-get install ffmpeg
