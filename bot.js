@@ -1103,7 +1103,7 @@ client.on("guildMemberAdd", function(member) {
         .setAuthor(member.user.tag, member.user.avatarURL)
  .setDescription('')
 .setThumbnail(member.avatarURL)
-  .setImage('رابط صورة الترحيب')
+  .setImage('https://cdn.discordapp.com/attachments/463824353000292371/464961863394918401/hqdefault.jpg')
         .setTimestamp()
         return wc.sendEmbed(embed);
         
