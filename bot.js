@@ -8263,7 +8263,6 @@ message.member.removeRole(message.guild.roles.find("name", "100"));
 
 const yt = require('ytdl-core');
 const ytdl = require('ytdl-core');
-const request = require('request');
 const getYoutubeID = require('get-youtube-id');
 const fetchVideoInfo = require('youtube-info');
 const fs = require("fs");
