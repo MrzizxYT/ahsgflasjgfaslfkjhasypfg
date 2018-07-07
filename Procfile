@@ -1,1 +1,1 @@
-worker: sudo apt-get install ffmpeg
+worker: sudo npm i ffmpeg
