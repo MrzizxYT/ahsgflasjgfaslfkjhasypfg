@@ -38,6 +38,7 @@
     "sqlite": "^2.9.1",
     "ascii-data-table": "^2.1.1",
     "discord-spoiler-bot": "^2.0.5",
+    "fortnite": "^4.1.1",
     "gm": "^1.23.1"
   },
   "engines": {
