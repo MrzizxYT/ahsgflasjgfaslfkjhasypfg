@@ -40,6 +40,7 @@
     "discord-spoiler-bot": "^2.0.5",
     "fortnite": "^4.1.1",
     "get-youtube-id": "^1.0.0",
+    "youtube-info":"^1.2.0",
     "gm": "^1.23.1"
   },
   "engines": {
