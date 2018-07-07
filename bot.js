@@ -11,6 +11,17 @@ client.on('message', message => {
   	}
 });
 
+
+client.on('ready', async () => {
+    console.log(`${client.user.username} has logged in.`);
+    client.user.setActivity('--help|life', {type: 'LISTENING'});
+});
+
+
+
+
+
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
 
