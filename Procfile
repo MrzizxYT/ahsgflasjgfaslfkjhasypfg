@@ -1,1 +1,1 @@
-worker: sudo npm i ffmpeg
+worker: node bot.js
