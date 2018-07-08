@@ -620,7 +620,7 @@ if(!check.voiceChannelID){
   rebel++;
 }
 }
-guild.channels.find('id', '465116999983431691').setName(" Voice「"+rebel+"」");
+guild.channels.find('id', '465627260565848077').setName(" Voice「"+rebel+"」");
   client.setInterval(() =>{
     let d = Date.now()
   }, 5000);
@@ -631,10 +631,10 @@ let newUserChannel = newMember.voiceChannel
 let oldUserChannel = oldMember.voiceChannel
  if(oldUserChannel === undefined && newUserChannel !== undefined) {
    rebel++;
-guild.channels.find('id', '465116999983431691').setName(" Voice「"+rebel+"」");
+guild.channels.find('id', '465627260565848077').setName(" Voice「"+rebel+"」");
 } else if(newUserChannel === undefined){
   rebel--;
-guild.channels.find('id', '465116999983431691').setName(" Voice「"+rebel+"」");
+guild.channels.find('id', '465627260565848077').setName(" Voice「"+rebel+"」");
 }
 });
 client.on('message', Codes => {
