@@ -118,6 +118,24 @@ client.on('message', message => {
 
 
 
+client.on('message', message => {
+    var args = message.content.split(/[ ]+/)
+    if(message.content.includes('عمر')){
+        message.delete()
+    return message.reply(`**https://cdn.discordapp.com/attachments/457782786749759498/466290491575631873/unknown.png**`)
+   message.delete()
+    }
+});
+
+
+
+
+
+
+
+
+
+
 
 
 
